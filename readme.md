@@ -1,0 +1,1 @@
+this is a repo where i play around with concepts of genetic algos and reinforement learning as i learn about them. it's just a bunch of exercises in my learning journey
