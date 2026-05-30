@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="genetic_algo_rocket"
+run/main_scene="uid://dpkaauf6y3jhn"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
+
+[global_group]
+
+rockets=""
+asteroids=""
+planets=""
+
+[layer_names]
+
+2d_physics/layer_1="rocket"
+2d_physics/layer_2="asteroid"
+2d_physics/layer_3="planet"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"

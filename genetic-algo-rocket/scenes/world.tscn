@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://dpkaauf6y3jhn"]
+
+[ext_resource type="Texture2D" uid="uid://bcniwqo6630d7" path="res://assets/bg_img.jpg" id="1_k0juu"]
+[ext_resource type="PackedScene" uid="uid://gf351myg6cjp" path="res://scenes/asteroid.tscn" id="2_71j4m"]
+[ext_resource type="PackedScene" uid="uid://qlb565lvc2jw" path="res://scenes/planet.tscn" id="3_qfnet"]
+[ext_resource type="Script" uid="uid://68hwm55eyyog" path="res://scripts/the_actual_ga_code.gd" id="4_i7141"]
+[ext_resource type="PackedScene" uid="uid://s4k8rtby0tp3" path="res://scenes/rocket.tscn" id="5_71j4m"]
+
+[node name="world" type="Node2D" unique_id=959879527]
+
+[node name="backdrop" type="Sprite2D" parent="." unique_id=678100684]
+position = Vector2(568.49994, 327)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("1_k0juu")
+
+[node name="asteroid5" parent="." unique_id=2019560709 instance=ExtResource("2_71j4m")]
+position = Vector2(1020.00006, 533)
+rotation = 0.645052
+scale = Vector2(0.20291951, 0.20461266)
+
+[node name="asteroid6" parent="." unique_id=1331827780 instance=ExtResource("2_71j4m")]
+position = Vector2(634.9999, 195.99997)
+rotation = 0.645052
+scale = Vector2(0.20291951, 0.20461266)
+
+[node name="asteroid18" parent="." unique_id=1377267940 instance=ExtResource("2_71j4m")]
+position = Vector2(842.9999, 592)
+rotation = 0.645052
+scale = Vector2(0.20291951, 0.20461266)
+
+[node name="asteroid19" parent="." unique_id=1969341841 instance=ExtResource("2_71j4m")]
+position = Vector2(59, 592.00006)
+rotation = 0.645052
+scale = Vector2(0.20291951, 0.20461266)
+
+[node name="asteroid20" parent="." unique_id=725961391 instance=ExtResource("2_71j4m")]
+position = Vector2(922, 327)
+rotation = 0.645052
+scale = Vector2(0.09200695, 0.10123999)
+
+[node name="asteroid2" parent="." unique_id=1223640050 instance=ExtResource("2_71j4m")]
+position = Vector2(149.00006, 485)
+rotation = -1.8760736
+scale = Vector2(0.26955009, 0.2438995)
+
+[node name="asteroid3" parent="." unique_id=786227664 instance=ExtResource("2_71j4m")]
+position = Vector2(528, 255.00002)
+rotation = 2.296388
+scale = Vector2(0.17494836, 0.18981232)
+
+[node name="asteroid4" parent="." unique_id=1053871049 instance=ExtResource("2_71j4m")]
+position = Vector2(172, 127.999985)
+rotation = 1.0367581
+scale = Vector2(0.22264741, 0.1864553)
+
+[node name="asteroid21" parent="." unique_id=390057429 instance=ExtResource("2_71j4m")]
+position = Vector2(337, 173)
+rotation = 3.054326
+scale = Vector2(0.20125812, 0.123255864)
+
+[node name="asteroid22" parent="." unique_id=1856190159 instance=ExtResource("2_71j4m")]
+position = Vector2(46.00003, 61.999985)
+rotation = 3.054326
+scale = Vector2(0.20125812, 0.123255864)
+
+[node name="asteroid23" parent="." unique_id=1164777810 instance=ExtResource("2_71j4m")]
+position = Vector2(651, 372)
+rotation = 3.054326
+scale = Vector2(0.20125812, 0.123255864)
+
+[node name="asteroid24" parent="." unique_id=2119804369 instance=ExtResource("2_71j4m")]
+position = Vector2(358, 312)
+rotation = 5.6722374
+scale = Vector2(0.20125812, 0.123255864)
+
+[node name="asteroid25" parent="." unique_id=2136134343 instance=ExtResource("2_71j4m")]
+position = Vector2(285.99988, 418)
+rotation = 5.6722374
+scale = Vector2(0.13570122, 0.10090643)
+
+[node name="asteroid9" parent="." unique_id=374358078 instance=ExtResource("2_71j4m")]
+position = Vector2(438.00003, 66.00006)
+rotation = 0.8020834
+scale = Vector2(0.2516134, 0.23004451)
+
+[node name="asteroid7" parent="." unique_id=770792975 instance=ExtResource("2_71j4m")]
+position = Vector2(1058, 253.00006)
+rotation = 2.296388
+scale = Vector2(0.13816208, 0.12379602)
+
+[node name="asteroid8" parent="." unique_id=1034540091 instance=ExtResource("2_71j4m")]
+position = Vector2(850, 83.99997)
+rotation = 3.773489
+scale = Vector2(0.19559406, 0.15226094)
+
+[node name="asteroid10" parent="." unique_id=1357965303 instance=ExtResource("2_71j4m")]
+position = Vector2(759, 264)
+rotation = 0.8020834
+scale = Vector2(0.16515015, 0.15241447)
+
+[node name="asteroid11" parent="." unique_id=110911370 instance=ExtResource("2_71j4m")]
+position = Vector2(76, 305.99988)
+rotation = 2.296388
+scale = Vector2(0.17313597, 0.14033304)
+
+[node name="asteroid13" parent="." unique_id=1212470598 instance=ExtResource("2_71j4m")]
+position = Vector2(335, 571)
+rotation = 2.296388
+scale = Vector2(0.25958842, 0.20477784)
+
+[node name="asteroid14" parent="." unique_id=1410635238 instance=ExtResource("2_71j4m")]
+position = Vector2(445.00003, 403)
+rotation = 4.284768
+scale = Vector2(0.18238917, 0.24224538)
+
+[node name="asteroid15" parent="." unique_id=294593949 instance=ExtResource("2_71j4m")]
+position = Vector2(821.99994, 422.99997)
+rotation = 2.296388
+scale = Vector2(0.17313597, 0.14033304)
+
+[node name="asteroid16" parent="." unique_id=907285610 instance=ExtResource("2_71j4m")]
+position = Vector2(1062, 88.99997)
+rotation = 3.6969256
+scale = Vector2(0.23798996, 0.20282346)
+
+[node name="asteroid26" parent="." unique_id=1322808085 instance=ExtResource("2_71j4m")]
+position = Vector2(1041, 410.99994)
+rotation = 3.6969256
+scale = Vector2(0.23798996, 0.20282346)
+
+[node name="asteroid12" parent="." unique_id=1853342772 instance=ExtResource("2_71j4m")]
+position = Vector2(631, 505.99994)
+rotation = 6.589465
+scale = Vector2(0.15842244, 0.11905412)
+
+[node name="asteroid17" parent="." unique_id=1429928173 instance=ExtResource("2_71j4m")]
+position = Vector2(655, 82.00006)
+rotation = 6.589465
+scale = Vector2(0.14852288, 0.15528992)
+
+[node name="planet" parent="." unique_id=110304446 instance=ExtResource("3_qfnet")]
+unique_name_in_owner = true
+position = Vector2(191.99994, 261)
+rotation = 0.39129665
+scale = Vector2(0.3, 0.3)
+
+[node name="spawner" type="Marker2D" parent="." unique_id=1127802041]
+unique_name_in_owner = true
+position = Vector2(570.00006, 647)
+scale = Vector2(4.3599997, 3.5200005)
+gizmo_extents = 30.0
+script = ExtResource("4_i7141")
+population_size = 500
+mutation_rate = 7.0
+num_frames = 500
+num_elites = 60
+max_thrust = 10.0
+rocket_scene = ExtResource("5_71j4m")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="spawner" unique_id=2066021147]
+offset_left = 52.293564
+offset_top = -130.9659
+offset_right = 239.08446
+offset_bottom = -73.86362
+scale = Vector2(0.29960406, 0.32946396)
+theme_override_font_sizes/normal_font_size = 20
+text = "generations"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="spawner" unique_id=1369190634]
+offset_left = 52.29356
+offset_top = -120.73862
+offset_right = 276.34946
+offset_bottom = -63.636337
+scale = Vector2(0.23748991, 0.28744274)
+theme_override_font_sizes/normal_font_size = 20
+text = "landings"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="spawner" unique_id=1408783963]
+offset_left = 52.75228
+offset_top = -112.21589
+offset_right = 276.8082
+offset_bottom = -55.11361
+scale = Vector2(0.23748991, 0.27607912)
+theme_override_font_sizes/normal_font_size = 20
+text = "crashes
+"

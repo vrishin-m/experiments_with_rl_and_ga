@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://qlb565lvc2jw"]
+
+[ext_resource type="Texture2D" uid="uid://nfoxshq3p34w" path="res://assets/mars.png" id="1_1odxm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1odxm"]
+radius = 225.03555
+
+[node name="planet" type="StaticBody2D" unique_id=110304446 groups=["planets"]]
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1213986866]
+texture = ExtResource("1_1odxm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=422250543]
+shape = SubResource("CircleShape2D_1odxm")

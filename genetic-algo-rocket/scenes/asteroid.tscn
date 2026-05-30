@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://gf351myg6cjp"]
+
+[ext_resource type="Texture2D" uid="uid://rnoj3bo0cma7" path="res://assets/asteroid1.png" id="1_u87q6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u87q6"]
+radius = 180.3446
+height = 480.5188
+
+[node name="asteroid" type="StaticBody2D" unique_id=1331827780 groups=["asteroids"]]
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=256822383]
+position = Vector2(17, 6)
+texture = ExtResource("1_u87q6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1948546607]
+position = Vector2(2, 2.000061)
+rotation = 0.850435
+shape = SubResource("CapsuleShape2D_u87q6")

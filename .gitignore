@@ -1,1 +1,8 @@
 .venv/
+.godot/
+.import/
+export_presets.cfg
+*.tmp
+mono_crash.*.json
+.mono/
+data_*/

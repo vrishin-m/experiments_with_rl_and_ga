@@ -4,13 +4,14 @@ import string
 
 
 key_set = list(string.ascii_lowercase)
+key_set.append('_')
 generations =0
 
 
 #controls to modify!
-target_word = "bananabananabananamonkemonkemonke"
-population_size = 1000
-mutation_rate = 5 #this is a percentage
+target_word = "this_is_a_random_string"
+population_size = 4500
+mutation_rate = 8 #this is a percentage
 num_elites = 50 #this is the number of top candidates from each generation who directly make it to the next one 
                 #without undergoing reproduction
 
@@ -42,9 +43,9 @@ def seggs(word1, word2):
 
 
 def mutation(word):
-    random_var = random.randint(0,100)
     new_word=list(word)
     for i in range(len(word)):
+        random_var = random.randint(0,100)
         if random_var <= mutation_rate:
             new_word= new_word[:i] + [random.choice(key_set)] + new_word[i+1:]
     return ''.join(new_word)
