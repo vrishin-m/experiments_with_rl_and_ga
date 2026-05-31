@@ -13,7 +13,7 @@ this is a genetic algorithm based program that generates random strings of lette
 
 ### genetic-algo-rocket
 
-i used godot engine to make game agents that learnt to avoid obstacles and move towards a target. each generation, hundreds of rockets are launched. these rockets get random thrusts every frame at the start. however, eventually they begin learning how to dodge the asteroids and reach planet mars! ignore the shitty graphics, i just used stock images
+i used godot engine to make game agents that learnt to avoid obstacles and move towards a target. each generation, hundreds of rockets are launched. these rockets get random thrusts every frame at the start. however, eventually they begin learning how to dodge the asteroids and reach planet mars! ignore the shitty graphics, i just used stock images. in the attached video clip, you can see how a couple of rockets in the first (completely random) generation happened to land on mars. they then passed on their genes to the next generations, and even many generations later, you can observe the rockets following their 2 distinct pathways. in other trials, i observed some pathways being preferred over others, and the rockets following one pathway even going "extinct".
 
 
 ### demo videos
@@ -28,3 +28,10 @@ https://drive.google.com/file/d/1FEFGQHNgBD-wNPc6U0pj6pHfJqdaJI9w/view?usp=shari
 game:
 
 https://drive.google.com/file/d/13p-PJCFZVoBXtligPRaDw422aAiwAH5M/view?usp=drive_link
+
+
+game clip 2:
+
+https://drive.google.com/file/d/1DWBy2Dpxj1FEiV45h9nigvbWwcYW-7TJ/view?usp=sharing
+
+here's an experiment i did. in the first clip, the rockets were given huge incentive to reach mars (the target). hitting asteroids gave them a penalty, but the reward of landing on mars were higher. so, while the number of mars landings increased steadily, the number of asteroid crashes kept fluctuating and showed no particular trend. in this clip, i removed mars altogether, and created a small "asteroid free zone" to the left side of the screen. and as expected, the rockets learnt to avoid asteroids and stick to the left side, with each generation having less losses!
