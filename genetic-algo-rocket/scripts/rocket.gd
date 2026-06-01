@@ -23,9 +23,10 @@ func _process(delta: float) -> void:
 	frames +=1
 	if frames >= num_frames:
 		die()
-	distance = (global_position-planet_position).length()
-	if distance < closest_distance:
-		closest_distance =distance
+	if planet_position:
+		distance = (global_position-planet_position).length()
+		if distance < closest_distance:
+			closest_distance =distance
 	
 	rotation = atan(-velocity.y/velocity.x)
 	
@@ -37,8 +38,9 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func _ready() -> void:
-	var planet = get_tree().current_scene.get_node("planet")
-	planet_position= planet.global_position
+	#var planet = get_tree().current_scene.get_node("planet")
+	#planet_position= planet.global_position
+	pass
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

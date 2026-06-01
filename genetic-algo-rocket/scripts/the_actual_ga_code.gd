@@ -26,7 +26,8 @@ func _ready() -> void:
 	population = generate_initial_population()
 	spawn_rockets(population)
 	simulation_running = true
-	planet_position = %planet.global_position
+	if %planet:
+		planet_position = %planet.global_position
 	$RichTextLabel.text= "GENERATION: " + str(generation)
 	$RichTextLabel2.text= "MARS LANDINGS: " + str(mars_touches)
 	$RichTextLabel3.text= "ASTEROID CRASHES: " + str(crashes)
@@ -87,7 +88,8 @@ func spawn_rockets(population):
 func get_rocket_fitness(position: Vector2, id: Array, frames: int, got_closer: bool, touched_mars: bool, crashed: bool):
 	var distance = (planet_position - position).length()
 	var fitness =0
-	fitness = (distance**(-3))*75000000000 - frames*50 + int(touched_mars)*1000000000 - int(crashed)*5000
+	#fitness = (distance**(-3))*75000000000 - frames*50 + int(touched_mars)*1000000000 - int(crashed)*5000
+	fitness = frames**3 + int(touched_mars)*1000000000 - int(crashed)*900000
 	if fitness<0:
 		fitness=0
 	

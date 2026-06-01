@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://l6vxvicn4ik5"]
+
+[ext_resource type="PackedScene" uid="uid://b1nw3lqmgdwrm" path="res://tank.glb" id="1_6lwfj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ealj"]
+radius = 4.272461
+height = 17.85791
+
+[node name="tank" unique_id=19670078 instance=ExtResource("1_6lwfj")]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1240199355]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.2585449, 2.0699255, 0)
+shape = SubResource("CapsuleShape3D_1ealj")
+
+[node name="front" type="RayCast3D" parent="." index="2" unique_id=434710100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8215895, 2.7227306, 0)
+target_position = Vector3(35, -5, 0)
+collision_mask = 2
+
+[node name="back" type="RayCast3D" parent="." index="3" unique_id=1292734618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.206398, 2.7227306, 0)
+target_position = Vector3(-25, -5, 0)
+collision_mask = 2
+
+[node name="right" type="RayCast3D" parent="." index="4" unique_id=1766599640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4500427, 2.7227306, 0)
+target_position = Vector3(0, -5, 35)
+collision_mask = 2
+
+[node name="front-right" type="RayCast3D" parent="." index="5" unique_id=2127920960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4500427, 2.7227306, 0)
+target_position = Vector3(20, -5, 25)
+collision_mask = 2
+
+[node name="front-left" type="RayCast3D" parent="." index="6" unique_id=1709591831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4500427, 2.7227306, 0)
+target_position = Vector3(20, -5, -25)
+collision_mask = 2
+
+[node name="left" type="RayCast3D" parent="." index="7" unique_id=285989405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4500427, 2.7227306, 0)
+target_position = Vector3(0, -5, -35)
+collision_mask = 2
