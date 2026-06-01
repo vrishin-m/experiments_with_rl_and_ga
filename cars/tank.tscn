@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://l6vxvicn4ik5"]
 
 [ext_resource type="PackedScene" uid="uid://b1nw3lqmgdwrm" path="res://tank.glb" id="1_6lwfj"]
+[ext_resource type="Script" uid="uid://6twy5qg5ekg3" path="res://tank.gd" id="2_1ealj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ealj"]
 radius = 4.272461
 height = 17.85791
 
-[node name="tank" unique_id=19670078 instance=ExtResource("1_6lwfj")]
+[node name="tank" unique_id=1433030585 instance=ExtResource("1_6lwfj")]
 collision_mask = 2
+script = ExtResource("2_1ealj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1240199355]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.2585449, 2.0699255, 0)
+[node name="collision_shape" type="CollisionShape3D" parent="." index="1" unique_id=1240199355]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.2585449, 0.71403134, 0)
 shape = SubResource("CapsuleShape3D_1ealj")
 
 [node name="front" type="RayCast3D" parent="." index="2" unique_id=434710100]
@@ -28,12 +30,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4500427, 2.7227306, 0)
 target_position = Vector3(0, -5, 35)
 collision_mask = 2
 
-[node name="front-right" type="RayCast3D" parent="." index="5" unique_id=2127920960]
+[node name="front_right" type="RayCast3D" parent="." index="5" unique_id=2127920960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4500427, 2.7227306, 0)
 target_position = Vector3(20, -5, 25)
 collision_mask = 2
 
-[node name="front-left" type="RayCast3D" parent="." index="6" unique_id=1709591831]
+[node name="front_left" type="RayCast3D" parent="." index="6" unique_id=1709591831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4500427, 2.7227306, 0)
 target_position = Vector3(20, -5, -25)
 collision_mask = 2
@@ -42,3 +44,13 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4500427, 2.7227306, 0)
 target_position = Vector3(0, -5, -35)
 collision_mask = 2
+
+[node name="checkpoint_detector" type="Area3D" parent="." index="8" unique_id=1969084919]
+collision_mask = 4
+monitorable = false
+
+[node name="collision_shape2" type="CollisionShape3D" parent="checkpoint_detector" index="0" unique_id=1813460692]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.2585449, 0.7140314, 0)
+shape = SubResource("CapsuleShape3D_1ealj")
+
+[connection signal="area_entered" from="checkpoint_detector" to="." method="_on_checkpoint_detector_area_entered"]

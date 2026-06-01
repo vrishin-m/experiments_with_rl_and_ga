@@ -1,18 +1,47 @@
 [gd_scene format=3 uid="uid://4adwkwkcuwnq"]
 
-[ext_resource type="Script" uid="uid://ck8hxxjpjvhm0" path="res://spawner.gd" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://ck8hxxjpjvhm0" path="res://controller.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://xq71a3sf2h2l" path="res://tcp_server.gd" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://l6vxvicn4ik5" path="res://tank.tscn" id="3_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://dt5er2ejobfh4" path="res://checkpoint.tscn" id="4_036b0"]
 
 [sub_resource type="GDScript" id="GDScript_tlwt5"]
 script/source = "extends Node3D
 "
 
+[sub_resource type="BoxMesh" id="BoxMesh_aqk2v"]
+size = Vector3(100, 2, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_aqk2v"]
+data = PackedVector3Array(-50, 1, 50, 50, 1, 50, -50, -1, 50, 50, 1, 50, 50, -1, 50, -50, -1, 50, 50, 1, -50, -50, 1, -50, 50, -1, -50, -50, 1, -50, -50, -1, -50, 50, -1, -50, 50, 1, 50, 50, 1, -50, 50, -1, 50, 50, 1, -50, 50, -1, -50, 50, -1, 50, -50, 1, -50, -50, 1, 50, -50, -1, -50, -50, 1, 50, -50, -1, 50, -50, -1, -50, 50, 1, 50, -50, 1, 50, 50, 1, -50, -50, 1, 50, -50, 1, -50, 50, 1, -50, -50, -1, 50, 50, -1, 50, -50, -1, -50, 50, -1, 50, 50, -1, -50, -50, -1, -50)
+
 [node name="world" type="Node3D" unique_id=226033804]
 script = SubResource("GDScript_tlwt5")
 
-[node name="spawner" type="Marker3D" parent="." unique_id=787737718]
+[node name="controller" type="Marker3D" parent="." unique_id=787737718]
 unique_name_in_owner = true
 script = ExtResource("1_f3sb7")
+tank_scene = ExtResource("3_aqk2v")
+population_size = 5
 
 [node name="server" type="Node3D" parent="." unique_id=1229097486]
 script = ExtResource("2_fj7yv")
+
+[node name="checkpoint" parent="." unique_id=561242246 instance=ExtResource("4_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7860527, -0.5160415, 0)
+
+[node name="tank" parent="." unique_id=923339267 instance=ExtResource("3_aqk2v")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=968201066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.719378, 0, 23.17532)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1931072650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40407735, -8.171785, 0)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=556386394]
+mesh = SubResource("BoxMesh_aqk2v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=584171429]
+shape = SubResource("ConcavePolygonShape3D_aqk2v")

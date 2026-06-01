@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dt5er2ejobfh4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_njsvn"]
+size = Vector3(21.480642, 9.39431, 2.9168396)
+
+[node name="checkpoint" type="Area3D" unique_id=561242246]
+collision_layer = 4
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=422214804]
+transform = Transform3D(-4.371138e-08, 0, 0.99999976, 0, 0.99999976, 0, -0.99999976, 0, -4.371138e-08, 0.4723511, 4.197154, -0.4454716)
+shape = SubResource("BoxShape3D_njsvn")
+debug_color = Color(0.9819868, 0, 0.3703697, 0.41960785)

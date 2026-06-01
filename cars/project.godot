@@ -15,10 +15,15 @@ run/main_scene="uid://4adwkwkcuwnq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+instructions="*uid://bnoeyj6s14fjw"
+
 [layer_names]
 
 3d_physics/layer_1="tank"
 3d_physics/layer_2="race_track"
+3d_physics/layer_3="checkpoint"
 
 [physics]
 
