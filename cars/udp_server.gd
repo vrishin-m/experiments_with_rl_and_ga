@@ -22,6 +22,7 @@ func _process(_delta: float) -> void:
 		active_peer.get_packet() 
 		print("python client connected")
 
+
 	if active_peer != null:
 		if active_peer.get_available_packet_count() > 0:
 			var packet = active_peer.get_packet()
@@ -41,10 +42,12 @@ func send_data(data):
 
 func launch_python_script() -> void:
 	var script_path = ProjectSettings.globalize_path("res://python_stuff/comms.py")
+
 	var args = [script_path]
 
 	var output = OS.create_process("python", args)
-	
+
+	print(output)
 	if output > 0:
 		python_pid = output
 		print("PID: ", python_pid)

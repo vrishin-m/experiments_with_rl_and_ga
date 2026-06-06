@@ -1,5 +1,5 @@
 extends Node
-
+var max_frames = 2000
 var instructions_dict={}
 
 # Called when the node enters the scene tree for the first time.

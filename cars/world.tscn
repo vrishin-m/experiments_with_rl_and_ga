@@ -1,47 +1,87 @@
 [gd_scene format=3 uid="uid://4adwkwkcuwnq"]
 
 [ext_resource type="Script" uid="uid://ck8hxxjpjvhm0" path="res://controller.gd" id="1_f3sb7"]
-[ext_resource type="Script" uid="uid://xq71a3sf2h2l" path="res://tcp_server.gd" id="2_fj7yv"]
+[ext_resource type="Script" uid="uid://xq71a3sf2h2l" path="res://udp_server.gd" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://l6vxvicn4ik5" path="res://tank.tscn" id="3_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://dt5er2ejobfh4" path="res://checkpoint.tscn" id="4_036b0"]
+[ext_resource type="PackedScene" uid="uid://dj8cej4dikr5w" path="res://track.tscn" id="5_036b0"]
+[ext_resource type="Script" uid="uid://bwy5tdkbw4gdk" path="res://camera_3d.gd" id="5_dwbse"]
+[ext_resource type="Script" uid="uid://ds31tjavhomsx" path="res://camera_controller.gd" id="7_pkg7o"]
 
 [sub_resource type="GDScript" id="GDScript_tlwt5"]
 script/source = "extends Node3D
 "
 
-[sub_resource type="BoxMesh" id="BoxMesh_aqk2v"]
-size = Vector3(100, 2, 100)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_036b0"]
+sky_top_color = Color(0.36788455, 0.8626494, 0.91329074, 1)
+sky_horizon_color = Color(0.75244844, 0.56671166, 0.52744603, 1)
+ground_bottom_color = Color(0.1260137, 0.13110676, 0.12821946, 1)
+ground_horizon_color = Color(0.7365037, 0.60697293, 0.59408426, 1)
+sun_angle_max = 74.38
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_aqk2v"]
-data = PackedVector3Array(-50, 1, 50, 50, 1, 50, -50, -1, 50, 50, 1, 50, 50, -1, 50, -50, -1, 50, 50, 1, -50, -50, 1, -50, 50, -1, -50, -50, 1, -50, -50, -1, -50, 50, -1, -50, 50, 1, 50, 50, 1, -50, 50, -1, 50, 50, 1, -50, 50, -1, -50, 50, -1, 50, -50, 1, -50, -50, 1, 50, -50, -1, -50, -50, 1, 50, -50, -1, 50, -50, -1, -50, 50, 1, 50, -50, 1, 50, 50, 1, -50, -50, 1, 50, -50, 1, -50, 50, 1, -50, -50, -1, 50, 50, -1, 50, -50, -1, -50, 50, -1, 50, 50, -1, -50, -50, -1, -50)
+[sub_resource type="Sky" id="Sky_dwbse"]
+sky_material = SubResource("ProceduralSkyMaterial_036b0")
+
+[sub_resource type="Environment" id="Environment_pkg7o"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_dwbse")
 
 [node name="world" type="Node3D" unique_id=226033804]
 script = SubResource("GDScript_tlwt5")
 
 [node name="controller" type="Marker3D" parent="." unique_id=787737718]
 unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.7068129, 2.29663, 0)
 script = ExtResource("1_f3sb7")
 tank_scene = ExtResource("3_aqk2v")
-population_size = 5
+population_size = 30
 
 [node name="server" type="Node3D" parent="." unique_id=1229097486]
 script = ExtResource("2_fj7yv")
 
-[node name="checkpoint" parent="." unique_id=561242246 instance=ExtResource("4_036b0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7860527, -0.5160415, 0)
+[node name="1" parent="." unique_id=349852116 instance=ExtResource("4_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.219437, -0.5160415, 0)
 
-[node name="tank" parent="." unique_id=923339267 instance=ExtResource("3_aqk2v")]
+[node name="2" parent="." unique_id=561242246 instance=ExtResource("4_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.76575, -0.5160415, 0)
+
+[node name="3" parent="." unique_id=1919185124 instance=ExtResource("4_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141.80489, -0.5160415, 0)
+
+[node name="4" parent="." unique_id=1348984815 instance=ExtResource("4_036b0")]
+transform = Transform3D(0.64202523, 0, -0.76668346, 0, 1, 0, 0.76668346, 0, 0.64202523, -198.56544, -0.5160415, -28.641356)
+
+[node name="5" parent="." unique_id=1885950795 instance=ExtResource("4_036b0")]
+transform = Transform3D(0.19486788, 0, -0.9808295, 0, 1, 0, 0.9808295, 0, 0.19486788, -251.46193, -0.5160415, -94.55169)
+
+[node name="6" parent="." unique_id=1938805265 instance=ExtResource("4_036b0")]
+transform = Transform3D(0.19486788, 0, -0.9808295, 0, 1, 0, 0.9808295, 0, 0.19486788, -267.28003, -0.5160415, -195.10368)
+
+[node name="7" parent="." unique_id=452394220 instance=ExtResource("4_036b0")]
+transform = Transform3D(0.59173197, 0, -0.80613494, 0, 1, 0, 0.80613494, 0, 0.59173197, -285.70694, -0.5160415, -263.75995)
+
+[node name="8" parent="." unique_id=882963556 instance=ExtResource("4_036b0")]
+transform = Transform3D(0.9621896, 0, -0.27238095, 0, 1, 0, 0.27238095, 0, 0.9621896, -337.5112, -0.5160415, -299.8179)
+
+[node name="9" parent="." unique_id=1999249939 instance=ExtResource("4_036b0")]
+transform = Transform3D(0.99986064, 0, -0.016701922, 0, 1, 0, 0.016701922, 0, 0.99986064, -391.04, -0.5160415, -314.18512)
+
+[node name="10" parent="." unique_id=2145249010 instance=ExtResource("4_036b0")]
+transform = Transform3D(0.98145705, 0, 0.19168282, 0, 1, 0, -0.19168282, 0, 0.98145705, -474.18607, -0.5160415, -311.62912)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=968201066]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.719378, 0, 23.17532)
+transform = Transform3D(1, 0, 0, 0, 0.9203479, 0.39110065, 0, -0.39110065, 0.9203479, -0.719378, 49.27026, 54.14869)
+script = ExtResource("5_dwbse")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1931072650]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40407735, -8.171785, 0)
-collision_layer = 2
-metadata/_edit_group_ = true
+[node name="track" parent="." unique_id=1715299273 groups=["walls"] instance=ExtResource("5_036b0")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, -3.8410218, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=556386394]
-mesh = SubResource("BoxMesh_aqk2v")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=886834977]
+environment = SubResource("Environment_pkg7o")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=584171429]
-shape = SubResource("ConcavePolygonShape3D_aqk2v")
+[node name="camera_controller" type="CharacterBody3D" parent="." unique_id=641571607]
+transform = Transform3D(1, 0, 0, 0, 0.9203479, 0.39110065, 0, -0.39110065, 0.9203479, -0.719378, 36.089916, 83.85408)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("7_pkg7o")

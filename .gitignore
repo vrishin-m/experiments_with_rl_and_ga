@@ -6,3 +6,5 @@ export_presets.cfg
 mono_crash.*.json
 .mono/
 data_*/
+python_stuff/
+cars/python_stuff/
