@@ -38,6 +38,7 @@ the downward trend is quite clear. the algo clearly learns how to go to the term
 
 
 this screenshot is quite interesting. if you notice the bottom right of the maze, you can see that i've set a "trap"
+<img width="246" height="216" alt="image" src="https://github.com/user-attachments/assets/78692270-f156-410d-94be-aced3e062758" />
 
 i call it "doomscrolling". the agent spent THREE MILLION episodes just doomscrolling on the little rewards (the 1s). honestly, it seemed like it wud never reach the big reward! i will try to play with the discount, greed and other hyperparameters to try and curb this behaviour. but for now, my agent just won't stop doomscrolling and doesn't care about the big picture (perhaps he is taking some notes from his creator)
 
