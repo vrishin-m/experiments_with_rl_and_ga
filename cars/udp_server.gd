@@ -28,10 +28,12 @@ func _process(_delta: float) -> void:
 			var packet = active_peer.get_packet()
 			var data = JSON.parse_string(packet.get_string_from_utf8())
 			instructions.instructions_dict = data
-			print(data)
 			
 		
-		
+func next_gen():
+	if active_peer:
+		active_peer.put_packet("next gen".to_utf8_buffer())
+			
 
 
 func send_data(data):

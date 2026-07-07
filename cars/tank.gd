@@ -10,6 +10,8 @@ var max_speed = 10
 
 var max_frames: int
 
+
+
 func _ready() -> void:
 	print("dong")
 	colliders =[$front, $back, $front_left, $front_right, $left, $right]
@@ -29,7 +31,8 @@ func _process(delta: float) -> void:
 		queue_free()
 		
 	var next_checkpoint = get_tree().current_scene.get_node(str(current_checkpoint+1)).global_position
-	data = [current_checkpoint, (global_position-next_checkpoint).length(), frames]
+	#first one is "alive" state. so 1 is alive, -1 is dead
+	data = [1, current_checkpoint, (global_position-next_checkpoint).length(), frames]
 	for i in colliders:
 		if i.is_colliding():
 			data.append((global_position-i.get_collider().global_position).length())
@@ -67,7 +70,8 @@ func _on_checkpoint_detector_area_entered(area: Area3D) -> void:
 
 
 func die():
-	data[0]=0
+	data =[-1,0,0,0,0,0,0,0,0,0]
+	send_data()
 	queue_free()
 	
 

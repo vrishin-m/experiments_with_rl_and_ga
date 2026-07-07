@@ -29,6 +29,9 @@ while True:
         if decoded_msg == "INIT":
             continue
             
+        elif decoded_msg =="next gen":
+            neural_network.selection()
+            
         godot_dict = json.loads(decoded_msg)
         python_response = neural_network.final_result(godot_dict)
         if godot_dict["0"][2] >= max_frames:

@@ -5,10 +5,12 @@ extends Marker3D
 var server: Node3D
 var tank_dict={}	
 @export var population_size: int	
+var num_dead =0
+var next_gen = false
+
 
 func _ready() -> void:
 	server = get_tree().current_scene.get_node("server")
-	
 	spawn_tanks()
 	
 func spawn_tanks():
@@ -27,9 +29,17 @@ func spawn_tanks():
 			
 func update_dict(id, data):
 	tank_dict[id]= data
+	if data[0] ==0:
+		num_dead +=1
+	if num_dead >= population_size:
+		next_gen = true
+		server.next_gen()
 
 func _process(delta: float) -> void:
-	server.send_data(tank_dict)
+	if !next_gen:
+		server.send_data(tank_dict)
+	
+
 	
 
 	
