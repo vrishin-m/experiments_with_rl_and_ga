@@ -12,10 +12,19 @@ this is a genetic algorithm based program that generates random strings of lette
 <img width="1407" height="833" alt="image" src="https://github.com/user-attachments/assets/3bff5263-db4d-4847-95ba-1ffc8476dad8" />
 
 
+
+
 ### genetic-algo-rocket
 
-i used godot engine to make game agents that learnt to avoid obstacles and move towards a target. each generation, hundreds of rockets are launched. these rockets get random thrusts every single frame. however, eventually they begin learning how to dodge the asteroids and reach planet mars! ignore the shitty graphics, i just used stock images. in the attached video clip, you can see how a couple of rockets in the first (completely random) generation happened to land on mars. they then passed on their genes to the next generations, and even many generations later, you can observe the rockets following their 2 distinct pathways. in other trials, i observed some pathways being preferred over others, and the rockets following one pathway even going "extinct".
+i used godot engine to make game agents that learnt to avoid obstacles and move towards a target. 
+
+each generation, hundreds of rockets are launched. these rockets get random thrusts every single frame. however, eventually they begin learning how to dodge the asteroids and reach planet mars! ignore the shitty graphics, i just used stock images. 
+
+in the attached video clip (bottom of this write-up), you can see how a couple of rockets in the first (completely random) generation happened to land on mars. they then passed on their genes to the next generations, and even many generations later, you can observe the rockets following their 2 distinct pathways. in other trials, i observed some pathways being preferred over others, and the rockets following one pathway even going "extinct".
 <img width="1213" height="681" alt="image" src="https://github.com/user-attachments/assets/09e0a9ab-7cd9-4150-bbd2-ba45a9e2e658" />
+here's a screenshot of the project
+
+
 
 
 ### cars
@@ -24,6 +33,8 @@ so this one is a project where i evolve the weights of a neural network so that 
 
 the final result of this project would have been cool, but i just abandoned it because it felt like too much work without much learning outcomes. by that i mean, i already know about regular NNs and genetic algos. combining both of them is not really going to teach me new things.  maybe i'll finish it off someday using ai.
 <img width="1213" height="768" alt="image" src="https://github.com/user-attachments/assets/9d2850a3-de45-41d0-a844-7c9ad2fca040" />
+
+
 
 
 ### /RL/q_learning_basics.py
@@ -39,13 +50,13 @@ the downward trend is quite clear. the algo clearly learns how to go to the term
 
 
 
-
 this screenshot is quite interesting. if you notice the bottom right of the maze, you can see that i've set a "trap"
 <img width="246" height="216" alt="image" src="https://github.com/user-attachments/assets/78692270-f156-410d-94be-aced3e062758" />
 
 i call it "doomscrolling". the agent spent THREE MILLION episodes just doomscrolling on the little rewards (the 1s). honestly, it seemed like it wud never reach the big reward! i will try to play with the discount, greed and other hyperparameters to try and curb this behaviour. but for now, my agent just won't stop doomscrolling and doesn't care about the big picture (perhaps he is taking some notes from his creator)
 
 <img width="545" height="940" alt="Screenshot 2026-07-07 214825" src="https://github.com/user-attachments/assets/e5711280-66ae-4460-969d-fe67b6b6ebf4" />
+
 
 # UPDATE!
 
@@ -59,6 +70,8 @@ this screenshot shows the maze, and the infinite loop created. the array with th
 <img width="1302" height="844" alt="Screenshot 2026-07-09 110201" src="https://github.com/user-attachments/assets/a91bdeb1-f9a5-4b71-8fd7-40ac1624b58a" />
 
 this screenshot shows the solution!! i REDUCED the disount factor, so that the agent chases immediate rewards rather than future rewards. and this actually ended up pointing it to the big 100, rather than discovering infinite loops and other cheats!!
+
+
 
 ### demo videos
 
